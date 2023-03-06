@@ -30,7 +30,9 @@ if [ $ARCH = "aarch64" ]; then
 		fi
 		
 		BASE_IMAGE_L4T=$BASE_IMAGE
-		BASE_IMAGE="jetpack:r$L4T_VERSION"
+       		#BASE_IMAGE="jetpack:r$L4T_VERSION"
+        	# Hard coded fix b/c l4t-base:r34.1 doesn't exist
+        	BASE_IMAGE="nvcr.io/nvidia/l4t-pytorch:r34.1.1-pth1.12-py3"
 		
 	elif [ $L4T_RELEASE -eq 35 ]; then
 		if [ $L4T_REVISION_MAJOR -le 1 ]; then # JetPack 5.0.2 (GA)
